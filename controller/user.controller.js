@@ -1,5 +1,4 @@
 const userModel = require("../models/user.model");
-var jwt = require("jsonwebtoken");
 
 exports.findAll = async function (req, res) {
     var alldeal = await userModel
