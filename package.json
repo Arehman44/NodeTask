@@ -7,13 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "author": "Mayur Nagle",
+  "author": "Abdul Rehman",
   "license": "ISC",
   "dependencies": {
-    "cryptr": "^6.0.2",
     "express": "^4.17.3",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.8",
+     "mongoose": "^6.2.8",
     "nodemon": "^2.0.15"
   }
 }
