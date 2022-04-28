@@ -1,38 +1,5 @@
 const userModel = require("../models/user.model");
 var jwt = require("jsonwebtoken");
-const Cryptr = require("cryptr");
-const cryptr = new Cryptr("myTotalySecretKey");
-
-// find all user with pagination
-exports.findAllUser = async function (req, res) {
-  var perPage = parseInt(req.params.perPage)
-    ? parseInt(req.params.perPage)
-    : 10;
-  var page = parseInt(req.params.page) || 1;
-  var alldeal = await userModel
-    .find()
-    .skip(perPage * page - perPage)
-    .limit(perPage);
-
-    userModel
-      .find()
-      .countDocuments()
-      .exec(function (err, count) {
-        if (count != null) {
-      res.json({
-        success: true,
-        users: alldeal,
-        currentpage: page,
-        totalpages: Math.ceil(count / perPage),
-      });
-  } else {
-    res.json({
-      success: false,
-      error: "Internal Server Error. Please try again.",
-    });
-  }
-});
-};
 
 exports.findAll = async function (req, res) {
     var alldeal = await userModel
@@ -128,7 +95,6 @@ exports.RegisterUser = async function (req, res) {
   var firstname = req.body.firstname;
   var lastname = req.body.lastname;
   var email = req.body.email;
-  var password = req.body.password?cryptr.encrypt(req.body.password):cryptr.encrypt('test123');
   var mobile = req.body.mobile;
   var address = req.body.address;
   var website = req.body.website;
@@ -139,7 +105,6 @@ exports.RegisterUser = async function (req, res) {
       lastname: lastname,
       mobile: mobile,
       email: email,
-      password: password,
       address :address,
       website :website
      
