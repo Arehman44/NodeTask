@@ -1,0 +1,19 @@
+{
+  "name": "demobackend",
+  "version": "1.0.0",
+  "description": "demo app ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Mayur Nagle",
+  "license": "ISC",
+  "dependencies": {
+    "cryptr": "^6.0.2",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.8",
+    "nodemon": "^2.0.15"
+  }
+}
